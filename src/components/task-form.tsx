@@ -20,7 +20,11 @@ import { Textarea } from './ui/textarea'
 import { createTask, updateTask } from '@/actions/task-actions'
 import { Task } from '@prisma/client'
 
-export function TaskForm({ task }: { task: Task }) {
+interface TaskFormProps {
+    task?: Task
+}
+
+export function TaskForm({ task }: TaskFormProps) {
     const fuctionAction = task?.id ? updateTask : createTask
 
     return (
